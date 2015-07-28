@@ -40,7 +40,7 @@
 		                return $filter('number')(params.data.mon, 1);
 		            },
 		            cellValueChanged: cellValueChangedFunction,
-		            hide: !vm.showMonday
+		            hide: vm.showMonday
 		        },
 		        {
 		            headerName: 'Tuesday',
@@ -431,7 +431,7 @@
 		        groupHeaders: true,
 		        rowSelection: 'single',
 		        enableSorting: true,
-		        sortPending: sortPending,
+		        sortPending: vm.sortPending,
 		        context: {
 		            pending_view: vm.pendingView
 		        },
@@ -458,14 +458,15 @@
 		        }
 		    }
 		    function sortPending() {
-		        vm.gridOptions.context.pending_view = !vm.gridOptions.context.pending_view;
+		    	alert('clicked');
+		        /*vm.gridOptions.context.pending_view = !vm.gridOptions.context.pending_view;
 
 		        var newData = getSortedData(vm.gridOptions.context.pending_view, unsorted);
 		        vm.gridOptions.api.setRows(newData);
 		        vm.gridOptions.api.refreshView();
 		        vm.gridOptions.api.refreshHeader();
 		        vm.gridOptions.api.onNewRows()
-		        return vm.gridOptions.context.pending_view;
+		        return vm.gridOptions.context.pending_view;*/
 		    }
 		    function numberNewValueHandler(params) {
 		        var valueAsNumber = parseInt(params.newValue);
