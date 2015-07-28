@@ -1,0 +1,16 @@
+body {
+	background-color: #990000;
+}
+
+.container {background-color: white; }
+
+.cBlack { color: #000; }
+.cBlue { color: #009; }
+.cGray { color: #ddd; }
+.cGreen { color: #006837; }
+.cOrange { color: #ff4500; }
+.cRed { color: #900; }
+.cYellow { color: #e0a02d; }
+
+.penOn {color: #006837; }
+.penOff { color: #aaaaaa; }
