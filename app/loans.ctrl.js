@@ -458,16 +458,12 @@
 		        }
 		    }
 		    function sortPending() {
-		    	alert('clicked');
+		    	//alert('clicked');
 		        vm.pendingView = !vm.pendingView;
 		        vm.gridOptions.context.pending_view = !vm.gridOptions.context.pending_view;
 		        vm.gridOptions.api.refreshHeader();
 		        var newData = getSortedData(vm.pendingView, unsorted);
-		        //vm.gridOptions.api.onNewCols(newData);
-		        //vm.gridOptions.api.refreshGroupRows(newData);
 		        vm.gridOptions.api.setRows(newData);
-		        vm.gridOptions.api.refreshView();
-		        console.log(newData);
 		    }
 		    function numberNewValueHandler(params) {
 		        var valueAsNumber = parseInt(params.newValue);
