@@ -9,7 +9,7 @@
 			var vm = this;
 
 			vm.pendingView = true;
-			vm.showMonday = true;
+			vm.showMonday = false;
 
 		    var columnDefs = [
 		        {
