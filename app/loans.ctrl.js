@@ -414,9 +414,9 @@
 		    function pendingHdr(params) {
 		        //console.log('before', params);
 		        if(params.context.pending_view){
-		            return '<div style="text-align:center !important;"><span class="pendicon glyphicon glyphicon-exclamation-sign" ng-click="vm.sortPending()" style="color:#006837;"></span></div>';
+		            return '<div style="text-align:center !important;"><span class="pendicon glyphicon glyphicon-exclamation-sign" ng-click="loans.sortPending()" style="color:#006837;"></span></div>';
 		        } else {
-		            return '<div style="text-align:center !important;"><span class="pendicon glyphicon glyphicon-exclamation-sign" ng-click="vm.sortPending()" style="color:#aaaaaa;"></span></div>';
+		            return '<div style="text-align:center !important;"><span class="pendicon glyphicon glyphicon-exclamation-sign" ng-click="loans.sortPending()" style="color:#aaaaaa;"></span></div>';
 		        }
 		    }
 
@@ -431,7 +431,7 @@
 		        groupHeaders: true,
 		        rowSelection: 'single',
 		        enableSorting: true,
-		        sortPending: vm.sortPending,
+		        sortPending: sortPending,
 		        context: {
 		            pending_view: vm.pendingView
 		        },
@@ -459,14 +459,15 @@
 		    }
 		    function sortPending() {
 		    	alert('clicked');
-		        /*vm.gridOptions.context.pending_view = !vm.gridOptions.context.pending_view;
-
-		        var newData = getSortedData(vm.gridOptions.context.pending_view, unsorted);
+		        vm.pendingView = !vm.pendingView;
+		        vm.gridOptions.context.pending_view = !vm.gridOptions.context.pending_view;
+		        vm.gridOptions.api.refreshHeader();
+		        var newData = getSortedData(vm.pendingView, unsorted);
+		        //vm.gridOptions.api.onNewCols(newData);
+		        //vm.gridOptions.api.refreshGroupRows(newData);
 		        vm.gridOptions.api.setRows(newData);
 		        vm.gridOptions.api.refreshView();
-		        vm.gridOptions.api.refreshHeader();
-		        vm.gridOptions.api.onNewRows()
-		        return vm.gridOptions.context.pending_view;*/
+		        console.log(newData);
 		    }
 		    function numberNewValueHandler(params) {
 		        var valueAsNumber = parseInt(params.newValue);
